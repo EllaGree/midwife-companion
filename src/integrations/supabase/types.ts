@@ -14,7 +14,253 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      appointments: {
+        Row: {
+          client_id: string
+          created_at: string
+          duration_minutes: number
+          id: string
+          notes: string | null
+          scheduled_at: string
+          status: string
+          type: string
+          updated_at: string
+        }
+        Insert: {
+          client_id: string
+          created_at?: string
+          duration_minutes?: number
+          id?: string
+          notes?: string | null
+          scheduled_at: string
+          status?: string
+          type: string
+          updated_at?: string
+        }
+        Update: {
+          client_id?: string
+          created_at?: string
+          duration_minutes?: number
+          id?: string
+          notes?: string | null
+          scheduled_at?: string
+          status?: string
+          type?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "appointments_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      birth_plans: {
+        Row: {
+          client_id: string
+          content: string
+          created_at: string
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          client_id: string
+          content?: string
+          created_at?: string
+          id?: string
+          updated_at?: string
+        }
+        Update: {
+          client_id?: string
+          content?: string
+          created_at?: string
+          id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "birth_plans_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: true
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      clients: {
+        Row: {
+          address: string | null
+          blood_type: string | null
+          created_at: string
+          date_of_birth: string | null
+          due_date: string | null
+          email: string | null
+          emergency_contact: string | null
+          full_name: string
+          id: string
+          medical_notes: string | null
+          phone: string | null
+          updated_at: string
+        }
+        Insert: {
+          address?: string | null
+          blood_type?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          due_date?: string | null
+          email?: string | null
+          emergency_contact?: string | null
+          full_name: string
+          id?: string
+          medical_notes?: string | null
+          phone?: string | null
+          updated_at?: string
+        }
+        Update: {
+          address?: string | null
+          blood_type?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          due_date?: string | null
+          email?: string | null
+          emergency_contact?: string | null
+          full_name?: string
+          id?: string
+          medical_notes?: string | null
+          phone?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      documents: {
+        Row: {
+          client_id: string
+          doc_type: string
+          file_name: string
+          id: string
+          mime_type: string | null
+          size_bytes: number | null
+          storage_path: string
+          uploaded_at: string
+        }
+        Insert: {
+          client_id: string
+          doc_type?: string
+          file_name: string
+          id?: string
+          mime_type?: string | null
+          size_bytes?: number | null
+          storage_path: string
+          uploaded_at?: string
+        }
+        Update: {
+          client_id?: string
+          doc_type?: string
+          file_name?: string
+          id?: string
+          mime_type?: string | null
+          size_bytes?: number | null
+          storage_path?: string
+          uploaded_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "documents_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      messages: {
+        Row: {
+          body: string
+          client_id: string
+          created_at: string
+          direction: string
+          id: string
+          read_at: string | null
+        }
+        Insert: {
+          body: string
+          client_id: string
+          created_at?: string
+          direction: string
+          id?: string
+          read_at?: string | null
+        }
+        Update: {
+          body?: string
+          client_id?: string
+          created_at?: string
+          direction?: string
+          id?: string
+          read_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "messages_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      prenatal_visits: {
+        Row: {
+          blood_pressure: string | null
+          client_id: string
+          created_at: string
+          fetal_heart_rate: number | null
+          fundal_height_cm: number | null
+          gestational_age_weeks: number | null
+          id: string
+          notes: string | null
+          updated_at: string
+          visit_date: string
+          weight_kg: number | null
+        }
+        Insert: {
+          blood_pressure?: string | null
+          client_id: string
+          created_at?: string
+          fetal_heart_rate?: number | null
+          fundal_height_cm?: number | null
+          gestational_age_weeks?: number | null
+          id?: string
+          notes?: string | null
+          updated_at?: string
+          visit_date: string
+          weight_kg?: number | null
+        }
+        Update: {
+          blood_pressure?: string | null
+          client_id?: string
+          created_at?: string
+          fetal_heart_rate?: number | null
+          fundal_height_cm?: number | null
+          gestational_age_weeks?: number | null
+          id?: string
+          notes?: string | null
+          updated_at?: string
+          visit_date?: string
+          weight_kg?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "prenatal_visits_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
