@@ -30,7 +30,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <Leaf className="h-5 w-5" />
         </div>
         <div>
-          <div className="font-display text-xl leading-none">Willow</div>
+          <div className="font-display text-xl leading-none">Sally Green</div>
           <div className="text-xs text-muted-foreground">midwifery practice</div>
         </div>
       </div>
@@ -84,7 +84,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <Leaf className="h-4 w-4" />
             </div>
-            <span className="font-display text-lg">Willow</span>
+            <span className="font-display text-lg">Sally Green</span>
           </div>
           <Button variant="ghost" size="icon" onClick={() => setMobileOpen(true)}>
             <Menu className="h-5 w-5" />
