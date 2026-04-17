@@ -10,7 +10,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Sign in — Willow" },
+      { title: "Sign in — Sally Green" },
       { name: "description", content: "Sign in to your midwifery practice." },
     ],
   }),
@@ -56,7 +56,7 @@ function LoginPage() {
             <Leaf className="h-5 w-5" />
           </div>
           <div>
-            <div className="font-display text-2xl">Willow</div>
+            <div className="font-display text-2xl">Sally Green</div>
             <div className="text-xs text-muted-foreground">midwifery practice</div>
           </div>
         </div>

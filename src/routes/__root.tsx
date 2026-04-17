@@ -31,10 +31,10 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Willow — Midwifery Practice" },
+      { title: "Sally Green — Midwifery Practice" },
       { name: "description", content: "Calm, secure practice management for independent midwives." },
-      { name: "author", content: "Willow" },
-      { property: "og:title", content: "Willow — Midwifery Practice" },
+      { name: "author", content: "Sally Green" },
+      { property: "og:title", content: "Sally Green — Midwifery Practice" },
       { property: "og:description", content: "Calm, secure practice management for independent midwives." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
