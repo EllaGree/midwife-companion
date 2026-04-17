@@ -133,7 +133,7 @@ function NewClientDialog({ onCreated }: { onCreated: () => void }) {
     for (const k of ["date_of_birth","phone","email","address","due_date","blood_type","emergency_contact","medical_notes"] as const) {
       payload[k] = form[k].trim() || null;
     }
-    const { error } = await supabase.from("clients").insert(payload);
+    const { error } = await supabase.from("clients").insert(payload as never);
     setBusy(false);
     if (error) {
       toast.error(error.message);
