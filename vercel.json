@@ -1,1 +1,0 @@
-{\n  "buildCommand": "bun run build",\n  "outputDirectory": ".output/public",\n  "installCommand": "bun install",\n  "rewrites": [\n    { "source": "/(.*)", "destination": "/index.html" }\n  ]\n}
